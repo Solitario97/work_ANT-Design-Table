@@ -9,7 +9,7 @@ function _Table() {
 
     const [character, setCharacter] = useState<Character[]>([]);
     const [loading, setLoading] = useState(false);
-    const [selectedRowKeys, setSelectedRowKeys] = useState([]);
+    const [selectedRowKeys, setSelectedRowKeys] = useState<React.Key[]>([]);
     const [newRows, setNewRows] = useState<Character[]>([]);
 
     interface Character {
@@ -22,7 +22,7 @@ function _Table() {
     }
 
 
-    const onSelectedRowChange = (newSelectedRow) => {
+    const onSelectedRowChange = (newSelectedRow: React.Key[]) => {
         setSelectedRowKeys(newSelectedRow);
     }
 
